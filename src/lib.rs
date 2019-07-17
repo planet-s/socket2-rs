@@ -50,7 +50,7 @@ mod sockaddr;
 mod socket;
 mod utils;
 
-#[cfg(unix)]
+#[cfg(all(unix, not(target_os = "redox")))]
 #[path = "sys/unix.rs"]
 mod sys;
 #[cfg(windows)]

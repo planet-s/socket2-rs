@@ -106,7 +106,7 @@ impl Socket {
         })?;
 
         event.write(&syscall::Event {
-            id: time.as_raw_fd(),
+            id: time.as_raw_fd() as usize,
             flags: syscall::EVENT_WRITE,
             data: 1,
         })?;
